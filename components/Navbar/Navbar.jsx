@@ -22,9 +22,11 @@ const Navbar = () => {
         <h1>llllllllllllllllllllllllllllll</h1>
       </div>
       <div className={style.navbar__right}>
-        <div className={style.navbar__wallet}>
-          <WalletMultiButtonDynamic />
-        </div>
+        {wallet.connected && (
+          <div className={style.navbar__wallet}>
+            <WalletMultiButtonDynamic />
+          </div>
+        )}
       </div>
     </div>
   );

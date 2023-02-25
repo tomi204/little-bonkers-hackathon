@@ -18,20 +18,19 @@ const Home = () => {
     <>
       <div className={styles.container}>
         <Navbar />
-        <h1 className={styles.h1}> Lorem ipsum dolor sit amet consectetur </h1>
-        <p className={styles.explain}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque as
-          <b>
-            <a
-              href="https://portal.thirdweb.com/solana"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.lightPurple}
-            >
-              Solana SDK
-            </a>
-          </b>
-        </p>
+
+        <main className={styles.main}>
+          {wallet.disconnect ? (
+            <div className={styles.disconnectedDiv}>
+              <h1 className={styles.title}>Connect your wallet </h1>
+              <WalletMultiButtonDynamic />
+            </div>
+          ) : (
+            <h1 className={styles.title}>
+              Welcome to <a href="https://nextjs.org">Next.js!</a>
+            </h1>
+          )}
+        </main>
       </div>
     </>
   );
