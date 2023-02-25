@@ -31,7 +31,9 @@ select {
 }
 
 body {
-  background: var(--background-color);
+  background-image: url("/assets/fondo.gif");
+  background-size: cover; /* para ajustar la imagen al tamaño del div */
+  background-position: center; /* para centrar la imagen */
   font-family: "Inter", sans-serif;
   color: var(--white);
   display: flex;

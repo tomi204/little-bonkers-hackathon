@@ -1,0 +1,24 @@
+.navbar {
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  height: 4rem;
+}
+.navbar__logo {
+  font-weight: 700;
+}
+.navbar__left {
+  display: flex;
+  align-items: center;
+}
+.navbar__right {
+  display: flex;
+  align-items: center;
+}
+
+/* Path: components/Navbar/Navbar.js */
