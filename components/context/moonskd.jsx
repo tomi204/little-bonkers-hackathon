@@ -5,6 +5,7 @@ const axios = require("axios");
 export async function GetNFTs() {
   const [overlap, setOverlap] = useState([]);
   const [topHolders, setTopHolders] = useState([]);
+
   useEffect(() => {
     const urlTop =
       "https://rest-api.hellomoon.io/v0/nft/collection/ownership/top-holders";
@@ -13,7 +14,7 @@ export async function GetNFTs() {
       const { data } = await axios.post(
         urlTop,
         {
-          helloMoonCollectionId: "5gPHbYV8LkN5uyZCvFEHRq7ZKtTWySMYF8zHRt2j5YP5",
+          helloMoonCollectionId: "ac64e3873bbc715017274585f664ec30",
         },
         {
           headers: {
