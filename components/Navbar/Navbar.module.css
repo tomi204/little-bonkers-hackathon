@@ -19,6 +19,31 @@
 .navbar__right {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.link__nav {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+}
+.link__nav:hover {
+  color: #e1ee25;
+  scale: 1.1;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+  .navbar__left {
+    display: none;
+  }
+  .navbar__right {
+    display: none;
+  }
+  .navbar__logo {
+    font-size: 1rem;
+  }
 }
 
 /* Path: components/Navbar/Navbar.js */

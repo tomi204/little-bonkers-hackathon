@@ -3,6 +3,7 @@ import style from "./Navbar.module.css";
 import { Stack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const wallet = useWallet();
@@ -19,9 +20,19 @@ const Navbar = () => {
         </div>
       </div>
       <div className={style.navbar__title}>
-        <h1>llllllllllllllllllllllllllllll</h1>
+        <h1>Little Bonkers</h1>
       </div>
       <div className={style.navbar__right}>
+        <Link className={style.link__nav} href="https://play.littlebonkers.xyz">
+          Play
+        </Link>
+        <br />
+        <Link
+          className={style.link__nav}
+          href="https://play.littlebonkers.xyz/signup"
+        >
+          Sing UP!
+        </Link>
         {wallet.connected && (
           <div className={style.navbar__wallet}>
             <WalletMultiButtonDynamic />
