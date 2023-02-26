@@ -77,7 +77,12 @@ const Home = () => {
                         key={holder.ownerAccount}
                         className={styles.topHolders__holder}
                       >
-                        <h1>{holder.ownerAccount}</h1>
+                        <h1 className={styles.tablaAddressM}>Address</h1>
+                        <h3 className={styles.tablaAddress}>
+                          {holder.ownerAccount}
+                        </h3>
+                        <h1 className={styles.tablaAddressM}>Amount</h1>
+                        <h3 className={styles.tablaAddress}>{holder.amount}</h3>
                       </div>
                     ))}
                   </div>
