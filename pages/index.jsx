@@ -11,7 +11,6 @@ import {
   NftListingStatusRequest,
 } from "@hellomoon/api";
 import { Container } from "@chakra-ui/react";
-import { GetNFTs } from "../components/context/moonskd";
 import { useEffect, useState } from "react";
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -68,26 +67,24 @@ const Home = () => {
             </div>
           ) : (
             <div className={styles.divConnect}>
-              <div className={styles.topHolders}>
-                <h1 className={styles.title}>Top 10 Holders</h1>
-                {top10?.length > 0 && (
-                  <div className={styles.topHolders__container}>
-                    {top10?.map((holder) => (
-                      <div
-                        key={holder.ownerAccount}
-                        className={styles.topHolders__holder}
-                      >
-                        <h1 className={styles.tablaAddressM}>Address</h1>
-                        <h3 className={styles.tablaAddress}>
-                          {holder.ownerAccount}
-                        </h3>
-                        <h1 className={styles.tablaAddressM}>Amount</h1>
-                        <h3 className={styles.tablaAddress}>{holder.amount}</h3>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <h1 className={styles.title}>Top 10 Holders</h1>
+              {top10?.length > 0 && (
+                <div className={styles.topHolders__container}>
+                  {top10?.map((holder) => (
+                    <div
+                      key={holder.ownerAccount}
+                      className={styles.topHolders__holder}
+                    >
+                      <h1 className={styles.tablaAddressM}>Address</h1>
+                      <h3 className={styles.tablaAddress}>
+                        {holder.ownerAccount}
+                      </h3>
+                      <h1 className={styles.tablaAddressM}>Amount</h1>
+                      <h3 className={styles.tablaAddress}>{holder.amount}</h3>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </main>
