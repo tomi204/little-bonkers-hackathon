@@ -60,9 +60,9 @@ const Home = () => {
       <div className={styles.container}>
         <Navbar />
         <main className={styles.main}>
-          {!wallet.disconnect ? (
+          {wallet.disconnect ? (
             <div className={styles.disconnectedDiv}>
-              <h1 className={styles.title}>Connect your wallet </h1>
+              <h1 className={styles.title}>Connect your wallet for look</h1>
               <WalletMultiButtonDynamic />
             </div>
           ) : (
