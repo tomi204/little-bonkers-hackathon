@@ -60,7 +60,7 @@ const Home = () => {
       <div className={styles.container}>
         <Navbar />
         <main className={styles.main}>
-          {wallet.disconnect ? (
+          {!wallet.disconnect ? (
             <div className={styles.disconnectedDiv}>
               <h1 className={styles.title}>Connect your wallet for look</h1>
               <WalletMultiButtonDynamic />
@@ -70,17 +70,23 @@ const Home = () => {
               <h1 className={styles.title}>Top 10 Holders</h1>
               {top10?.length > 0 && (
                 <div className={styles.topHolders__container}>
+                  <div className={styles.Address__amount}>
+                    <h1 className={styles.tablaAddressM}>Address</h1>
+                    <h1 className={styles.tablaAddressM}>Total Tokens</h1>
+                  </div>
                   {top10?.map((holder) => (
                     <div
                       key={holder.ownerAccount}
                       className={styles.topHolders__holder}
                     >
-                      <h1 className={styles.tablaAddressM}>Address</h1>
-                      <h3 className={styles.tablaAddress}>
-                        {holder.ownerAccount}
-                      </h3>
-                      <h1 className={styles.tablaAddressM}>Amount</h1>
-                      <h3 className={styles.tablaAddress}>{holder.amount}</h3>
+                      <div className={styles.colums}>
+                        <h3 className={styles.tablaAddress}>
+                          {holder.ownerAccount.substr(0, 18) + "..."}
+                        </h3>
+                      </div>
+                      <div>
+                        <h3 className={styles.tablaAddress}>{holder.amount}</h3>
+                      </div>
                     </div>
                   ))}
                 </div>

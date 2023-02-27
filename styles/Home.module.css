@@ -41,17 +41,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 120%;
+  justify-content: space-around;
+  width: 550px;
   background-color: black;
   border-radius: 20px;
+  border-width: 2px;
+  border-color: #e1ee25;
+  border-style: solid;
+}
+.colums {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 55%;
 }
 .topHolders__holder {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: black;
   width: 100%;
+
+  border-radius: 20px;
+}
+.Address__amount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  border-width: 2px;
+  border-color: #e1ee25;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 0 24px;
 }
 
 .explain {
@@ -69,49 +94,37 @@
   font-size: medium;
   color: #e1ee25;
 }
-@media (min-width: 768px) {
-  .container {
-    margin-top: 96px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 99vw;
-    padding: 0 24px;
-  }
-  .iconContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding: 16px;
-  }
-  .disconnectedDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    padding: 0 24px;
-    margin-top: 96px;
-  }
-  .divConnect {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0 24px;
-    margin-top: 96px;
-  }
-  .h1 {
-    margin-bottom: 0px;
-  }
-  .explain {
-    font-size: 1.125rem;
-  }
-  .lightPurple {
-    color: #e011a7;
+
+.container {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 99vw;
+  padding: 0 24px;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+.h1 {
+  margin-bottom: 0px;
+}
+.explain {
+  font-size: 1.125rem;
+}
+.lightPurple {
+  color: #e011a7;
+}
+
+@media (max-width: 768px) {
+  .topHolders__container {
+    width: 350px;
   }
 }
