@@ -33,11 +33,10 @@ const Navbar = () => {
         >
           Sing UP!
         </Link>
-        {wallet.connected && (
-          <div className={style.navbar__wallet}>
-            <WalletMultiButtonDynamic />
-          </div>
-        )}
+
+        <div className={style.navbar__wallet}>
+          <WalletMultiButtonDynamic />
+        </div>
       </div>
     </div>
   );

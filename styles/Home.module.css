@@ -63,7 +63,6 @@
   justify-content: center;
   background-color: black;
   width: 100%;
-
   border-radius: 20px;
 }
 .Address__amount {
@@ -113,18 +112,29 @@
   gap: 16px;
   padding: 16px;
 }
-.h1 {
-  margin-bottom: 0px;
+.bonk {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
 }
-.explain {
-  font-size: 1.125rem;
-}
-.lightPurple {
-  color: #e011a7;
+.bonkH {
+  color: #e1ee25;
 }
 
 @media (max-width: 768px) {
   .topHolders__container {
     width: 350px;
+  }
+  .h1 {
+    margin-bottom: 0px;
+  }
+  .explain {
+    font-size: 1.125rem;
+  }
+  .lightPurple {
+    color: #e011a7;
   }
 }
