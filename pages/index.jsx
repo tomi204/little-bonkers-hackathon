@@ -32,10 +32,31 @@ const Home = () => {
   const [price, setPrice] = useState([]);
   const [totalSupply, setTotalSupply] = useState([]);
   const [metadata, setMetadata] = useState([]);
+
   useEffect(() => {
+    const urlCan = "https://rest-api.hellomoon.io/v0/token/stats";
+
+    async function getWeeklyStats() {
+      const { data } = await axios.post(
+        urlCan,
+        {
+          mint: "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          granularity: "ONE_WEEK",
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: "Bearer  f2cc01a0-5363-4d94-a6e5-4ed62aceb860",
+          },
+        }
+      );
+      setPrice(data.data);
+      console.log(data.data);
+    }
+    getWeeklyStats();
     const urlTop =
       "https://rest-api.hellomoon.io/v0/nft/collection/ownership/top-holders";
-    const urlPrice = "https://rest-api.hellomoon.io/v0/token/candlesticks";
 
     async function getTopHolders() {
       const { data } = await axios.post(
@@ -72,13 +93,13 @@ const Home = () => {
         }
       );
       setMetadata(data.data);
-      console.log(data.data);
     }
 
     getTokenInfo();
     getTopHolders();
   }, []);
   const top10 = topHolders.data?.slice(0, 10);
+  const totalData = price.find((item) => item.latest_price);
   return (
     <>
       <div className={styles.container}>
@@ -92,7 +113,7 @@ const Home = () => {
             .map((item) => (
               <div key={item.data} className={styles.bonk}>
                 <h1 className={styles.bonkH}>${item.name}</h1>
-                <h1 className={styles.bonkH}>$ 0</h1>
+                <h1 className={styles.bonkH}>$ {totalData.latest_price}</h1>
               </div>
             ))}
           <h1 className={styles.title}>Top 10 Holders</h1>
