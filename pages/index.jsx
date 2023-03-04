@@ -12,6 +12,8 @@ import {
 } from "@hellomoon/api";
 import { Container } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { Top10 } from "../components/sliderComponents/Top10";
+import { useMounted } from "../components/utils/mounted";
 const WalletMultiButtonDynamic = dynamic(
   async () =>
     (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
@@ -27,6 +29,7 @@ const axios = require("axios");
 
 const Home = () => {
   const wallet = useWallet();
+  const mounted = useMounted();
   const [overlap, setOverlap] = useState([]);
   const [topHolders, setTopHolders] = useState([]);
   const [price, setPrice] = useState([]);
@@ -99,6 +102,7 @@ const Home = () => {
     getTopHolders();
   }, []);
   const top10 = topHolders.data?.slice(0, 10);
+
   const totalData = price.find((item) => item.latest_price);
   return (
     <>
@@ -117,7 +121,7 @@ const Home = () => {
               </div>
             ))}
           <h1 className={styles.title}>Top 10 Holders</h1>
-          {top10?.length > 0 && (
+          {/* {top10?.length > 0 && (
             <div className={styles.topHolders__container}>
               <div className={styles.Address__amount}>
                 <h1 className={styles.tablaAddressM}>Address</h1>
@@ -139,7 +143,8 @@ const Home = () => {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
+          {mounted ? <Top10 top10={top10} /> : null}
         </main>
       </div>
     </>
