@@ -42,8 +42,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  backdrop-filter: blur(12px);
+  filter: contrast(1.5);
   width: 550px;
-  background-color: black;
+  /* background-color: black; */
   border-radius: 20px;
   border-width: 2px;
   border-color: #e1ee25;
@@ -61,7 +63,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: black;
   width: 100%;
   border-radius: 20px;
 }

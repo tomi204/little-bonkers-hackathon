@@ -112,8 +112,8 @@ const Home = () => {
             )
             .map((item) => (
               <div key={item.data} className={styles.bonk}>
-                <h1 className={styles.bonkH}>${item.name}</h1>
-                <h1 className={styles.bonkH}>$ {totalData.latest_price}</h1>
+                <h1 className={styles.bonkH}>${totalData?.symbol}</h1>
+                <h1 className={styles.bonkH}>$ {totalData?.latest_price}</h1>
               </div>
             ))}
           <h1 className={styles.title}>Top 10 Holders</h1>
