@@ -113,11 +113,36 @@
   gap: 16px;
   padding: 16px;
 }
-.bonk {
+.bonkName {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+.bonkData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.bonk {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  backdrop-filter: blur(12px);
+  filter: contrast(1.5);
+  width: 550px;
+  /* background-color: black; */
+  border-radius: 20px;
+  border-width: 2px;
+  border-color: #e1ee25;
+  border-style: solid;
   gap: 16px;
   padding: 16px;
 }

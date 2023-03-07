@@ -10,7 +10,7 @@ import {
   NftListings,
   NftListingStatusRequest,
 } from "@hellomoon/api";
-import { Container } from "@chakra-ui/react";
+import { Button, Container } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Top10 } from "../components/sliderComponents/Top10";
 import { useMounted } from "../components/utils/mounted";
@@ -102,8 +102,10 @@ const Home = () => {
     getTopHolders();
   }, []);
   const top10 = topHolders.data?.slice(0, 10);
-
+  console.log(price, "totalData");
   const totalData = price.find((item) => item.latest_price);
+  const marketCap = parseInt(totalData?.volume);
+
   return (
     <>
       <div className={styles.container}>
@@ -117,33 +119,24 @@ const Home = () => {
             .map((item) => (
               <div key={item.data} className={styles.bonk}>
                 <h1 className={styles.bonkH}>${totalData?.symbol}</h1>
-                <h1 className={styles.bonkH}>$ {totalData?.latest_price}</h1>
+                <div className={styles.bonkName}>
+                  <h1 className={styles.bonkH}>Value </h1>
+                  <h1 className={styles.bonkH}>Market Cap </h1>
+                  <h1 className={styles.bonkH}>Total Holders</h1>
+                </div>
+                <div className={styles.bonkData}>
+                  <h1 className={styles.bonkH}>${totalData?.latest_price}</h1>
+                  <h1 className={styles.bonkH}>${marketCap?.toFixed(0)}</h1>
+                  <h1 className={styles.bonkH}>{totalData?.totalHolders}</h1>
+                </div>
               </div>
             ))}
+          {/* <div>
+            <Button colorScheme="teal" variant="outline">
+              TOP 10 HOLDERS
+            </Button>
+          </div> */}
           <h1 className={styles.title}>Top 10 Holders</h1>
-          {/* {top10?.length > 0 && (
-            <div className={styles.topHolders__container}>
-              <div className={styles.Address__amount}>
-                <h1 className={styles.tablaAddressM}>Address</h1>
-                <h1 className={styles.tablaAddressM}>Total Tokens</h1>
-              </div>
-              {top10?.map((holder) => (
-                <div
-                  key={holder.ownerAccount}
-                  className={styles.topHolders__holder}
-                >
-                  <div className={styles.colums}>
-                    <h3 className={styles.tablaAddress}>
-                      {holder.ownerAccount.substr(0, 18) + "..."}
-                    </h3>
-                  </div>
-                  <div>
-                    <h3 className={styles.tablaAddress}>{holder.amount}</h3>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )} */}
           {mounted ? <Top10 top10={top10} /> : null}
         </main>
       </div>
