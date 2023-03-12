@@ -1,7 +1,6 @@
 import styles from "../../styles/Home.module.css";
 
 export const Top10 = ({ top10 }) => {
-  console.log(top10);
   return (
     <div>
       {top10?.length > 0 && (

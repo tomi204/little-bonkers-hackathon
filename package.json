@@ -20,7 +20,6 @@
     "@solana/wallet-adapter-wallets": "^0.19.5",
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
-    "api": "^5.0.7",
     "framer-motion": "^10.0.0",
     "next": "^13",
     "react": "^18.2",
